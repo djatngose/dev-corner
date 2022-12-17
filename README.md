@@ -26,3 +26,7 @@ Learning and growing your knowledge every day
 
 # Clean code
 1. 
+
+
+# Interview
+1. Interview preparation book: https://www.techinterviewhandbook.org/
