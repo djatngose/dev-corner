@@ -1,14 +1,8 @@
-# CLRs, BCLs, and Runtimes
-- Runtime support for C# programs consists of a Common Language Runtime and a Base Class Library. A runtime can also include a higher-level application layer that contains libraries for developing rich-client, mobile, or web applications 
-
-![Image](../assets/images/clr_bcl_runtime_1.png)
-Figure 1.1 Runtime architecture
-
 # Common Language Runtime (CLR)
 - A Common Language Runtime (CLR) provides essential runtime services such as automatic memory management and exception handling.
 - C# is called a managed language because it compiles source code into `managed code`, which is represented in `Intermediate Language (IL)`. The CLR converts the IL into the native code of the machine, such as X64 or X86, usually just prior to execution. This is referred to as `Just-in-Time (JIT)` compilation.
 - `Ahead-of-time compilation` is also available to improve startup time with large assemblies or resource-constrained devices (and to satisfy iOS app store rules when developing mobile apps).
-- The container for managed code is called an `assembly`. An assembly contains not only IL but also type information (metadata). The presence of metadata allows assemblies to reference types in other assemblies without needing additional files.
+- The container for managed code is called an `assembly`. `An assembly contains not only IL but also type information (metadata). The presence of metadata allows assemblies to reference types in other assemblies without needing additional files.
 - which is responsible for converting the `MSIL (Microsoft Intermediate Language) code` into `native code` and then execution through these steps:
 ```
 Source code -> Language Compiler -> MSIL/IL/Managed Code -> CLR(JIT) -> Native code -> Execute
@@ -23,10 +17,17 @@ Source code -> Language Compiler -> MSIL/IL/Managed Code -> CLR(JIT) -> Native c
 
 - A BCL also implements types that the C# language itself requires (for features such as enumeration, querying, and asynchrony) and lets you explicitly access features of the CLR, such as reflection and memory management.
 
+
 # Runtimes
 - A `runtime (also called a framework)` is a deployable unit that you download and install. A runtime consists of a CLR (with its BCL), plus an optional application layer specific to the kind of application that you’re writing—web, mobile, rich client, etc. (If you’re writing a command-line console application or a non-UI library, you don’t need an application layer.)
 
 - When writing an application, you target a particular runtime, which means that your application uses and depends on the functionality that the runtime provides. Your choice of runtime also determines which platforms your application will support.
+
+# CLRs, BCLs, and Runtimes
+- Runtime support for C# programs consists of a Common Language Runtime and a Base Class Library. A runtime can also include a higher-level application layer that contains libraries for developing rich-client, mobile, or web applications 
+
+![Image](../assets/images/clr_bcl_runtime_1.png)
+Figure 1.1 Runtime architecture
 
 # JIT
 - JIT stands for the `Just-in-Time` compiler. It is the component of CLR which is responsible for converting `MSIL` code into `Native` Code. This Native code is directly understandable by the operating system.
