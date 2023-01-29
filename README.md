@@ -6,7 +6,8 @@ The content is inspired mostly by the book: [C# 10 in a Nutshell of the publishe
 
 1. [Intro](./csharp/1.intro/intro.md)
 2. News
-   1. c# 10
+   1. [c# 10](./csharp/2.news/version-10.md)
+   2. [c# 9](csharp/2.news/version-9.md)
 3. .NET Architecture
    1. .NET Standard
    2. Runtime and language versions
@@ -16,13 +17,15 @@ The content is inspired mostly by the book: [C# 10 in a Nutshell of the publishe
 4. Basics
    1. Syntax
    2. Types
+      1. Reference types
+      2. Value types
    3. Numberic types
    4. Boolean types and operators
    5. String and characters
    6. Arrays
    7. Variables and Parameters
    8. Expressions and Operators
-   9. Null Operators
+   9.  Null Operators
    10. Statements
    11. Namespaces
 5.  Advances
@@ -67,6 +70,7 @@ The content is inspired mostly by the book: [C# 10 in a Nutshell of the publishe
     2.  https://learn.microsoft.com/en-us/dotnet/standard/collections/thread-safe/
 18. Interview questions
     1.  https://dotnettutorials.net/course/dot-net-interview-questions/
+    2.  When to use record vs class vs struct? https://stackoverflow.com/questions/64816714/when-to-use-record-vs-class-vs-struct
 
 # Python
 I also love Python due to consise and flexible programming language. trying to understand it deeply and willing to work with it as another sencond importantn programming language
@@ -120,3 +124,4 @@ I also love Python due to consise and flexible programming language. trying to u
 
 # Interview
 1. Interview preparation book: https://www.techinterviewhandbook.org
+2. https://github.com/DopplerHQ/awesome-interview-questions#c-2
