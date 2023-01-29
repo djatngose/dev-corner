@@ -8,11 +8,12 @@ The content is inspired mostly by the book: [C# 10 in a Nutshell of the publishe
 2. News
    1. [c# 10](./csharp/2.news/version-10.md)
    2. [c# 9](csharp/2.news/version-9.md)
+   3. [c# 8](csharp/2.news/version-8.md)
 3. .NET Architecture
    1. .NET Standard
    2. Runtime and language versions
    3. Reference Assemblies
-   4. [CLR](./csharp/dotnet-architecture/clr.md)
+   4. [CLR](./csharp/3.dotnet-architecture/clr.md)
    5. Application layers
 4. Basics
    1. Syntax
@@ -25,7 +26,7 @@ The content is inspired mostly by the book: [C# 10 in a Nutshell of the publishe
    6. Arrays
    7. Variables and Parameters
    8. Expressions and Operators
-   9.  Null Operators
+   9. Null Operators
    10. Statements
    11. Namespaces
 5.  Advances
