@@ -2,7 +2,6 @@
 We will keep earning and growing a little of knowledge every day. I will collect my knowledge and years of working experiences to contribute this page to help people can gain a deep understanding of the code that we are working on instead of a surface such as just coding and runing not completely understand the functionalities behind the scene
 
 # C#
-The content is inspired mostly by the book: [C# 10 in a Nutshell of the publisher: O'Reilly Media](https://learning.oreilly.com/library/view/c-10-in/9781098121945/). I also collect a lot of info throught working experience and research and interview questions as well
 
 1. [Intro](./csharp/1.intro/intro.md)
 2. News
@@ -138,3 +137,6 @@ I also love Python due to consise and flexible programming language. trying to u
 # Interview
 1. Interview preparation book: https://www.techinterviewhandbook.org
 2. https://github.com/DopplerHQ/awesome-interview-questions#c-2
+
+# References
+- [C# 10 in a Nutshell](https://learning.oreilly.com/library/view/c-10-in/9781098121945/)
