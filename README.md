@@ -1,5 +1,5 @@
 # Intro
-We will keep earning and growing a little of knowledge every day. I will collect my knowledge and years of working experiences to contribute this page to help people can gain a deep understanding of the code that we are working on instead of a surface such as just coding and runing not completely understand the functionalities
+We will keep earning and growing a little of knowledge every day. I will collect my knowledge and years of working experiences to contribute this page to help people can gain a deep understanding of the code that we are working on instead of a surface such as just coding and runing not completely understand the functionalities behind the scene
 
 # C#
 The content is inspired mostly by the book: [C# 10 in a Nutshell of the publisher: O'Reilly Media](https://learning.oreilly.com/library/view/c-10-in/9781098121945/). I also collect a lot of info throught working experience and research and interview questions as well
@@ -23,12 +23,13 @@ The content is inspired mostly by the book: [C# 10 in a Nutshell of the publishe
    3. Numberic types
    4. Boolean types and operators
    5. String and characters
-   6. Arrays
-   7. Variables and Parameters
-   8. Expressions and Operators
-   9. Null Operators
-   10. Statements
-   11. Namespaces
+   6. [Arrays](csharp/4.basic/array.md)
+   7. Expressions and Operators
+   8. Null Operators
+   9.  Statements
+   10. Namespaces
+   11. [Operators](csharp/4.basic/operators.md)
+   12. [Parameters](csharp/4.basic/parameters.md)
 5.  Advances
     1.  Delegates
     2.  Events
@@ -54,18 +55,27 @@ The content is inspired mostly by the book: [C# 10 in a Nutshell of the publishe
     22. Advance threading
     23. parallel programming
     24. Regular expressions
+    25. Inspect c# code and how it works in github  https://github.com/dotnet/aspnetcore
+        1.  Collections
+        2.  ConcurrentDictionary
+        3.  Http, HttpClientFactory
+        4.  Middleware
+        5.  Grpc
+        6.  Catching
+        7.  SignalR
 6. Security
 7. Concurrency [Class](./csharp/class.md)
 8. Async await programming
-9. Dependency Injection
+9.  Dependency Injection
 10. Garbage collector 
 11. .NET 6/7
 12. Asynchronous Programming and Multithreading
 13. Task.ConfigureAwait(false)
 14. WhenAll vs WaitAll
 15. Thread
-16. IEnumerable<T> vs ICollection<T> vs IList<T>
-   1.  https://learning.oreilly.com/library/view/c-10-in/9781098121945/ch07.html#ienumerableless_thantgreater_than_and
+16. [Enumeration comparisons](./csharp/0.csharp-interview/enumeration-comparison.md)
+   1.  IEnumerable<T> vs ICollection<T> vs IList<T>
+   2.  https://learning.oreilly.com/library/view/c-10-in/9781098121945/ch07.html#ienumerableless_thantgreater_than_and
 17. Thread safe in .NET: Some of the concurrent collection types use lightweight synchronization mechanisms such as SpinLock, SpinWait, SemaphoreSlim, and CountdownEvent,
     1.  Synchronization primitives: Monitor, Mutex, Spinlock, ReaderWriterLock, Semaphore, Autoresetevent,ManualResetEvent, Interlocked, CountDownEvent, Barrier
     2.  https://learn.microsoft.com/en-us/dotnet/standard/collections/thread-safe/
@@ -88,6 +98,8 @@ I also love Python due to consise and flexible programming language. trying to u
 9. API gateway
 10. Circuit Breaker
 
+# Design pattern
+1. Most common patterns in real life
 # API
 - `API Design Patterns`
 
