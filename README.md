@@ -8,27 +8,50 @@ We will keep earning and growing a little of knowledge every day. I will collect
    1. [c# 10](./csharp/2.news/version-10.md)
    2. [c# 9](csharp/2.news/version-9.md)
    3. [c# 8](csharp/2.news/version-8.md)
+   4. [c# 7](csharp/2.news/version-7.md)
+   5. [c# 6](csharp/2.news/version-6.md)
 3. .NET Architecture
    1. .NET Standard
    2. Runtime and language versions
    3. Reference Assemblies
    4. [CLR](./csharp/3.dotnet-architecture/clr.md)
    5. Application layers
+   6. [Assembly](./csharp/3.dotnet-architecture/assembly.md)
 4. Basics
-   1. Syntax
-   2. Types
+   1. [Access modifier](./csharp/4.basic/1.access-modifier.md)
+   2. [Array](./csharp/4.basic/2.array.md)
+   3. [Class](./csharp/4.basic/3.class.md)
+   4. [Constant](./csharp/4.basic/4.constant.md)
+   5. [Context keywords](./csharp/4.basic/5.contextual-keywords.md)
+   6. [Conversion](./csharp/4.basic/6.conversion.md)
+   7. [Custom types](./csharp/4.basic/7.custom-types.md)
+   8. [Define assignment](./csharp/4.basic/8.define-assigment.md)
+   9. [Identifier](./csharp/4.basic/9.identifier.md)
+   10. [Interface](./csharp/4.basic/10.interface.md)
+   11. [Literal](./csharp/4.basic/11.literal.md)
+   12. [Object type](./csharp/4.basic/12.object-type.md)
+   13. [Operation](./csharp/4.basic/13.operators.md)
+   14. [Parameter](./csharp/4.basic/14.parameters.md)
+   15. [Program main method](./csharp/4.basic/15.program-main-method.md)
+   16. [Value type](./csharp/4.basic/22.value-types.md)
+   17. [Reference type](./csharp/4.basic/17.reference-types.md)
+   18. [Stack heap](./csharp/4.basic/18.stack-heap.md)
+   19. [Statement](./csharp/4.basic/19.statement.md)
+   20. [String characters](./csharp/4.basic/20.string-characters.md)
+   21. [Var type](./csharp/4.basic/23.var-type.md)
+   22. Types
       1. Reference types
       2. Value types
-   3. Numberic types
-   4. Boolean types and operators
-   5. String and characters
-   6. [Arrays](csharp/4.basic/array.md)
-   7. Expressions and Operators
-   8. Null Operators
-   9.  Statements
-   10. Namespaces
-   11. [Operators](csharp/4.basic/operators.md)
-   12. [Parameters](csharp/4.basic/parameters.md)
+   23. Numberic types
+   24. Boolean types and operators
+   25. String and characters
+   26. [Arrays](csharp/4.basic/array.md)
+   27. Expressions and Operators
+   28. Null Operators
+   29. Statements
+   30. Namespaces
+   31. [Operators](csharp/4.basic/operators.md)
+   32. [Parameters](csharp/4.basic/parameters.md)
 5.  Advances
     1.  Delegates
     2.  Events
