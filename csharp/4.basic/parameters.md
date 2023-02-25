@@ -47,3 +47,254 @@ static void Foo (StringBuilder fooSB)
 Note: `Because fooSB is a copy of a reference, setting it to null doesn’t make sb null. (If, however, fooSB was declared and called with the ref modifier, sb would become null.)`
 
 # The ref modifier
+To pass by reference, C# provides the ref parameter modifier. In the following example, p and x refer to the same memory locations:
+
+```c#
+int x = 8;
+Foo (ref  x);              // Ask Foo to deal directly with x
+Console.WriteLine (x);     // x is now 9
+
+static void Foo (ref int p)
+{
+  p = p + 1;               // Increment p by 1
+  Console.WriteLine (p);   // Write p to screen
+}
+
+```
+Now assigning p a new value changes the contents of x. Notice how the ref modifier is required both when writing and when calling the method
+
+The ref modifier is essential in implementing a swap method (in “Generics”, we show how to write a swap method that works with any type):
+
+```c#
+string x = "Penn";
+string y = "Teller";
+Swap (ref x, ref y);
+Console.WriteLine (x);   // Teller
+Console.WriteLine (y);   // Penn
+
+static void Swap (ref string a, ref string b)
+{
+  string temp = a;
+  a = b;
+  b = temp;
+}
+```
+Note: `A parameter can be passed by reference or by value, regardless of whether the parameter type is a reference type or a value type.`
+
+# The out modifier
+An out argument is like a ref argument except for the following:
+  - It need not be assigned before going into the function.
+  - It must be assigned before it comes out of the function.
+
+The out modifier is most commonly used to get multiple return values back from a method; for example:
+
+```c#
+string a, b;
+Split ("Stevie Ray Vaughn", out a, out b);
+Console.WriteLine (a);                      // Stevie Ray
+Console.WriteLine (b);                      // Vaughn
+
+void Split (string name, out string firstNames, out string lastName)
+{
+  int i = name.LastIndexOf (' ');
+  firstNames = name.Substring (0, i);
+  lastName = name.Substring (i + 1);
+}
+```
+Like a ref parameter, an out parameter is passed by reference.
+
+# Out variables and discards
+You can declare variables on the fly when calling methods with out parameters. We can replace the first two lines in our preceding example with this:
+
+Split ("Stevie Ray Vaughan", out string a, out string b);
+When calling methods with multiple out parameters, sometimes you’re not interested in receiving values from all the parameters. In such cases, you can “discard” the ones in which you’re uninterested by using an underscore:
+
+Split ("Stevie Ray Vaughan", out string a, out _);   // Discard 2nd param
+Console.WriteLine (a);
+
+In this case, the compiler treats the underscore as a special symbol, called a discard. You can include multiple discards in a single call. Assuming SomeBigMethod has been defined with seven out parameters, we can ignore all but the fourth, as follows:
+
+SomeBigMethod (out _, out _, out _, out int x, out _, out _, out _);
+
+For backward compatibility, this language feature will not take effect if a real underscore variable is in scope:
+
+string _;
+Split ("Stevie Ray Vaughan", out string a, out _);
+Console.WriteLine (_);     // Vaughan
+
+# Implications of passing by reference
+When you pass an argument by reference, you alias the storage location of an existing variable rather than create a new storage location. In the following example, the variables x and y represent the same instance:
+
+```c#
+class Test
+{
+  static int x;
+
+  static void Main() { Foo (out x); }
+
+  static void Foo (out int y)
+  {
+    Console.WriteLine (x);                // x is 0
+    y = 1;                                // Mutate y
+    Console.WriteLine (x);                // x is 1
+  }
+}
+```
+
+# The in modifier
+An in parameter is similar to a ref parameter except that the argument’s value cannot be modified by the method (doing so generates a compile-time error). This modifier is most useful when passing a large value type to the method because it allows the compiler to avoid the overhead of copying the argument prior to passing it in while still protecting the original value from modification.
+
+Overloading solely on the presence of in is permitted:
+```c#
+void Foo (   SomeBigStruct a) { ... }
+void Foo (in SomeBigStruct a) { ... }
+```
+To call the second overload, the caller must use the in modifier:
+```c#
+SomeBigStruct x = ...;
+Foo (x);      // Calls the first overload
+Foo (in x);   // Calls the second overload
+
+```
+
+When there’s no ambiguity,
+```
+void Bar (in SomeBigStruct a) { ... }
+```
+use of the in modifier is optional for the caller:
+```
+Bar (x);     // OK (calls the 'in' overload)
+Bar (in x);  // OK (calls the 'in' overload)
+```
+
+# The params modifier
+The params modifier, if applied to the last parameter of a method, allows the method to accept any number of arguments of a particular type. The parameter type must be declared as an (single-dimensional) array, as shown in the following example:
+
+```c#
+int total = Sum (1, 2, 3, 4);
+Console.WriteLine (total);              // 10
+
+// The call to Sum above is equivalent to:
+int total2 = Sum (new int[] { 1, 2, 3, 4 });
+
+int Sum (params int[] ints)
+{
+  int sum = 0;
+  for (int i = 0; i < ints.Length; i++)
+    sum += ints [i];                       // Increase sum by ints[i]
+  return sum;
+}
+```
+If there are zero arguments in the params position, a zero-length array is created.
+
+You can also supply a params argument as an ordinary array. The first line in our example is semantically equivalent to this:
+```c#
+Console.WriteLine(Sum(new int []{1,2,3}));
+Console.WriteLine(Sum(1,2,3));
+Console.WriteLine(Sum());
+```
+
+# Optional parameters
+
+Methods, constructors, and indexers (Chapter 3) can declare optional parameters. A parameter is optional if it specifies a default value in its declaration:
+
+void Foo (int x = 23) { Console.WriteLine (x); }
+You can omit optional parameters when calling the method:
+
+Foo();     // 23
+The default argument of 23 is actually passed to the optional parameter x—the compiler bakes the value 23 into the compiled code at the calling side. The preceding call to Foo is semantically identical to
+
+Foo (23); 
+because the compiler simply substitutes the default value of an optional parameter wherever it is used.
+
+Note: Adding an optional parameter to a public method that’s called from another assembly requires recompilation of both assemblies—just as though the parameter were mandatory.
+
+The default value of an optional parameter must be specified by a constant expression, a parameterless constructor of a value type, or a default expression. Optional parameters cannot be marked with ref or out.
+
+Mandatory parameters must occur before optional parameters in both the method declaration and the method call (the exception is with params arguments, which still always come last). In the following example, the explicit value of 1 is passed to x, and the default value of 0 is passed to y:
+
+Foo (1);    // 1, 0
+
+void Foo (int x = 0, int y = 0) { Console.WriteLine (x + ", " + y); }
+You can do the converse (pass a default value to x and an explicit value to y) by combining optional parameters with named arguments.
+
+# Named arguments
+Rather than identifying an argument by position, you can identify an argument by name:
+
+Foo (x:1, y:2);  // 1, 2
+
+void Foo (int x, int y) { Console.WriteLine (x + ", " + y); }
+Named arguments can occur in any order. The following calls to Foo are semantically identical:
+
+Foo (x:1, y:2);
+Foo (y:2, x:1);
+
+A subtle difference is that argument expressions are evaluated in the order in which they appear at the calling site. In general, this makes a difference only with interdependent side-effecting expressions such as the following, which writes 0, 1:
+
+int a = 0;
+Foo (y: ++a, x: --a);  // ++a is evaluated first
+
+Of course, you would almost certainly avoid writing such code in practice!
+
+You can mix named and positional arguments:
+
+Foo (1, y:2);
+However, there is a restriction: positional arguments must come before named arguments unless they are used in the correct position. So, you could call Foo like this:
+
+Foo (x:1, 2);         // OK. Arguments in the declared positions
+But not like this:
+
+Foo (y:2, 1);         // Compile-time error. y isn't in the first position
+
+Named arguments are particularly useful in conjunction with optional parameters. For instance, consider the following method:
+
+void Bar (int a = 0, int b = 0, int c = 0, int d = 0) { ... }
+You can call this supplying only a value for d, as follows:
+
+Bar (d:3);
+
+# Ref Locals
+A somewhat esoteric feature of C# is that you can define a local variable that references an element in an array or field in an object (from C# 7):
+
+int[] numbers = { 0, 1, 2, 3, 4 };
+ref int numRef = ref numbers [2];
+In this example, numRef is a reference to numbers[2]. When we modify numRef, we modify the array element:
+
+numRef *= 10;
+Console.WriteLine (numRef);        // 20
+Console.WriteLine (numbers [2]);   // 20
+
+The target for a ref local must be an `array element, field, or local variable`; it cannot be a property (Chapter 3). Ref locals are intended for specialized micro-optimization scenarios and are typically used in conjunction with ref returns.
+
+# Ref Returns
+The Span<T> and ReadOnlySpan<T> types that we describe in Chapter 23 use ref returns to implement a highly efficient indexer. Outside such scenarios, ref returns are not commonly used, and you can consider them a micro-optimization feature.
+You can return a ref local from a method. This is called a ref return:
+
+class Program
+{
+  static string x = "Old Value";
+
+  static ref string GetX() => ref x;    // This method returns a ref
+
+  static void Main()
+  {
+    ref string xRef = ref GetX();       // Assign result to a ref local
+    xRef = "New Value";
+    Console.WriteLine (x);              // New Value
+  }
+}
+
+If you omit the ref modifier on the calling side, it reverts to returning an ordinary value:
+
+string localX = GetX();  // Legal: localX is an ordinary non-ref variable.
+You also can use ref returns when defining a property or indexer:
+
+static ref string Prop => ref x;
+Such a property is implicitly writable, despite there being no set accessor:
+
+Prop = "New Value";
+
+The ref readonly modifier prevents modification while still enabling the performance gain of returning by reference. The gain would be very small in this case, because x is of type string (a reference type): no matter how long the string, the only inefficiency that you can hope to avoid is the copying of a single 32- or 64-bit reference. Real gains can occur with custom value types (see “Structs”), but only if the struct is marked as readonly (otherwise, the compiler will perform a defensive copy).
+
+Attempting to define an explicit set accessor on a ref return property or indexer is illegal.
+var can decrease code readability when you can’t deduce the type purely by looking at the variable declaration; for example:

@@ -229,3 +229,206 @@ static int Max (int a, int b)
   return (a > b) ? a : b;
 }
 ```
+
+# Expressions and Operators
+An expression essentially denotes a value. The simplest kinds of expressions are constants and variables. Expressions can be transformed and combined using operators. An operator takes one or more input operands to output a new expression.
+
+Here is an example of a constant expression:
+
+12
+We can use the * operator to combine two operands (the literal expressions 12 and 30), as follows:
+
+12 * 30
+
+We can build complex expressions because an operand can itself be an expression, such as the operand (12 * 30) in the following example:
+
+1 + (12 * 30)
+Operators in C# can be classed as unary, binary, or ternary, depending on the number of operands they work on (one, two, or three). The binary operators always use infix notation in which the operator is placed between the two operands.
+
+# Primary Expressions
+Primary expressions include expressions composed of operators that are intrinsic to the basic plumbing of the language. Here is an example:
+
+Math.Log (1)
+This expression is composed of two primary expressions. The first expression performs a member lookup (with the . operator), and the second expression performs a method call (with the () operator).
+
+# Void Expressions
+A void expression is an expression that has no value, such as this:
+
+Console.WriteLine (1)
+Because it has no value, you cannot use a void expression as an operand to build more complex expressions:
+
+1 + Console.WriteLine (1)      // Compile-time error
+
+# Assignment Expressions
+An assignment expression uses the = operator to assign the result of another expression to a variable; for example:
+
+x = x * 5
+An assignment expression is not a void expression—it has a value of whatever was assigned, and so can be incorporated into another expression. In the following example, the expression assigns 2 to x and 10 to y:
+
+y = 5 * (x = 2)
+You can use this style of expression to initialize multiple values:
+
+a = b = c = d = 0
+The compound assignment operators are syntactic shortcuts that combine assignment with another operator:
+
+x *= 2    // equivalent to x = x * 2
+x <<= 1   // equivalent to x = x << 1
+
+# Operator Precedence and Associativity
+When an expression contains multiple operators, precedence and associativity determine the order of their evaluation. Operators with higher precedence execute before operators with lower precedence. If the operators have the same precedence, the operator’s associativity determines the order of evaluation.
+
+## Precedence
+The following expression
+
+1 + 2 * 3
+is evaluated as follows because * has a higher precedence than +:
+
+1 + (2 * 3)
+
+## Left-associative operators
+Binary operators (except for assignment, lambda, and null-coalescing operators) are left-associative; in other words, `they are evaluated from left to right`. For example, the following expression
+
+8 / 4 / 2
+is evaluated as follows:
+
+( 8 / 4 ) / 2    // 1
+
+You can insert parentheses to change the actual order of evaluation:
+
+8 / ( 4 / 2 )    // 4
+## Right-associative operators
+The assignment operators as well as the lambda, null-coalescing(??), and conditional operators are right-associative; in other words, they are evaluated from right to left. Right associativity allows multiple assignments, such as the following, to compile:
+
+x = y = 3;
+This first assigns 3 to y and then assigns the result of that expression (3) to x.
+
+## Operator Table
+
+```
+Category	Operator symbol	Operator name	Example	User-overloadable	 
+Primary	.	Member access	x.y	No	 
+ 	?. and ?[]	Null-conditional	x?.y or x?[0]	No	 
+ 	! (postfix)	Null-forgiving	x!.y or x![0]	No
+ 	-> (unsafe)	Pointer to struct	x->y	No	 
+ 	()	Function call	x()	No	 
+ 	[]	Array/index	a[x]	Via indexer	 
+ 	++	Post-increment	x++	Yes	 
+ 	−−	Post-decrement	x−−	Yes	 
+ 	new	Create instance	new Foo()	No	 
+ 	stackalloc	Stack allocation	stackalloc(10)	No	 
+ 	typeof	Get type from identifier	typeof(int)	No	 
+ 	nameof	Get name of identifier	nameof(x)	No	 
+ 	checked	Integral overflow check on	checked(x)	No	 
+ 	unchecked	Integral overflow check off	unchecked(x)	No	 
+ 	default	Default value	default(char)	No	 
+Unary	await	Await	await myTask	No	 
+ 	sizeof	Get size of struct	sizeof(int)	No	 
+ 	+	Positive value of	+x	Yes	 
+ 	−	Negative value of	−x	Yes	 
+ 	!	Not	!x	Yes	 
+ 	~	Bitwise complement	~x	Yes	 
+ 	++	Pre-increment	++x	Yes	 
+ 	−−	Pre-decrement	−−x	Yes	 
+ 	()	Cast	(int)x	No	 
+ 	^	Index from end	array[^1]	No
+ 	* (unsafe)	Value at address	*x	No	 
+ 	& (unsafe)	Address of value	&x	No	 
+Range	..
+..^	Range of indices	x..y
+x..^y	No	 
+Switch & with	switch	Switch expression	num switch {
+1 => true,
+_ => false
+}	No
+ 	with	With expression	rec with
+{ X = 123 }	No
+Multiplicative	*	Multiply	x * y	Yes	 
+ 	/	Divide	x / y	Yes	 
+ 	%	Remainder	x % y	Yes	 
+Additive	+	Add	x + y	Yes	 
+ 	−	Subtract	x − y	Yes	 
+Shift	<<	Shift left	x << 1	Yes	 
+ 	>>	Shift right	x >> 1	Yes	 
+Relational	<	Less than	x < y	Yes	 
+ 	>	Greater than	x > y	Yes	 
+ 	<=	Less than or equal to	x <= y	Yes	 
+ 	>=	Greater than or equal to	x >= y	Yes	 
+ 	is	Type is or is subclass of	x is y	No	 
+ 	as	Type conversion	x as y	No	 
+Equality	==	Equals	x == y	Yes	 
+ 	!=	Not equals	x != y	Yes	 
+Logical And	&	And	x & y	Yes	 
+Logical Xor	^	Exclusive Or	x ^ y	Yes	 
+Logical Or	|	Or	x | y	Yes	 
+Conditional And	&&	Conditional And	x && y	Via &	 
+Conditional Or	||	Conditional Or	x || y	Via |	 
+Null coalescing	??	Null coalescing	x ?? y	No	 
+Conditional	?:	Conditional	isTrue ? thenThis : elseThis	No	 
+Assignment and lambda	=	Assign	x = y	No	 
+ 	*=	Multiply self by	x *= 2	Via *	 
+ 	/=	Divide self by	x /= 2	Via /	 
+ 	%=	Remainder & assign to self	x %= 2	 
+ 	+=	Add to self	x += 2	Via +	 
+ 	−=	Subtract from self	x −= 2	Via −	 
+ 	<<=	Shift self left by	x <<= 2	Via <<	 
+ 	>>=	Shift self right by	x >>= 2	Via >>	 
+ 	&=	And self by	x &= 2	Via &	 
+ 	^=	Exclusive-Or self by	x ^= 2	Via ^	 
+ 	|=	Or self by	x |= 2	Via |	 
+ 	??=	Null-coalescing assignment	x ??= 0	No	 
+ 	=>	Lambda	x => x + 1	No
+```
+
+# Null Operators
+
+## Null-Coalescing Operator
+The ?? operator is the null-coalescing operator. It says, “If the operand to the left is non-null, give it to me; otherwise, give me another value.” For example:
+
+string s1 = null;
+string s2 = s1 ?? "nothing";   // s2 evaluates to "nothing"
+If the lefthand expression is non-null, the righthand expression is never evaluated. The null-coalescing operator also works with nullable value types (see “Nullable Value Types”).
+
+## Null-Coalescing Assignment Operator
+The ??= operator (introduced in C# 8) is the null-coalescing assignment operator. It says, “If the operand to the left is null, assign the right operand to the left operand.” Consider the following:
+
+myVariable ??= someDefault;
+This is equivalent to:
+
+if (myVariable == null) myVariable = someDefault;
+The ??= operator is particularly useful in implementing lazily calculated properties. We’ll cover this topic later, in “Calculated Fields and Lazy Evaluation”.
+
+## Null-Conditional Operator
+The ?. operator is the null-conditional or “Elvis” operator (after the Elvis emoticon). It allows you to call methods and access members just like the standard dot operator except that if the operand on the left is null, the expression evaluates to null instead of throwing a NullReferenceException:
+
+System.Text.StringBuilder sb = null;
+string s = sb?.ToString();  // No error; s instead evaluates to null
+The last line is equivalent to the following:
+
+string s = (sb == null ? null : sb.ToString());
+Null-conditional expressions also work with indexers:
+
+string foo = null;
+char? c = foo?[1];  // c is null
+Upon encountering a null, the Elvis operator short-circuits the remainder of the expression. In the following example, s evaluates to null, even with a standard dot operator between ToString() and ToUpper():
+
+System.Text.StringBuilder sb = null;
+string s = sb?.ToString().ToUpper();   // s evaluates to null without error
+Repeated use of Elvis is necessary only if the operand immediately to its left might be null. The following expression is robust to both x being null and x.y being null:
+
+x?.y?.z
+It is equivalent to the following (except that x.y is evaluated only once):
+
+x == null ? null 
+          : (x.y == null ? null : x.y.z)
+The final expression must be capable of accepting a null. The following is illegal:
+
+System.Text.StringBuilder sb = null;
+int length = sb?.ToString().Length;   // Illegal : int cannot be null
+We can fix this with the use of nullable value types (see “Nullable Value Types”). If you’re already familiar with nullable value types, here’s a preview:
+
+int? length = sb?.ToString().Length;   // OK: int? can be null
+You can also use the null-conditional operator to call a void method:
+
+someObject?.SomeVoidMethod();
+If someObject is null, this becomes a “no-operation” rather than throwing a Null​Re⁠ferenceException.
+

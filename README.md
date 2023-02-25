@@ -69,6 +69,10 @@ We will keep earning and growing a little of knowledge every day. I will collect
 10. Garbage collector 
 11. .NET 6/7
 12. Asynchronous Programming and Multithreading
+    1.  Volatile
+    2.  Interlocked
+    3.  Lock
+    4.  SpinWait
 13. Task.ConfigureAwait(false)
 14. WhenAll vs WaitAll
 15. Thread
