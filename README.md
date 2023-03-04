@@ -90,7 +90,8 @@ We will keep earning and growing a little of knowledge every day. I will collect
 8. Async await programming
 9.  Dependency Injection
 10. Garbage collector 
-11. .NET 6/7
+11. .NET
+    1.  Scope, Trasient and Singleton
 12. Asynchronous Programming and Multithreading
     1.  Volatile
     2.  Interlocked
@@ -105,7 +106,11 @@ We will keep earning and growing a little of knowledge every day. I will collect
 17. Thread safe in .NET: Some of the concurrent collection types use lightweight synchronization mechanisms such as SpinLock, SpinWait, SemaphoreSlim, and CountdownEvent,
     1.  Synchronization primitives: Monitor, Mutex, Spinlock, ReaderWriterLock, Semaphore, Autoresetevent,ManualResetEvent, Interlocked, CountDownEvent, Barrier
     2.  https://learn.microsoft.com/en-us/dotnet/standard/collections/thread-safe/
-18. Interview questions
+18. .NET migration
+    1.  migrate from .net framework to .net core
+    2.  migrate from .net framework to .net 7
+    3.  migrate from .net core to .net 7
+19. Interview questions
     1.  https://dotnettutorials.net/course/dot-net-interview-questions/
     2.  When to use record vs class vs struct? https://stackoverflow.com/questions/64816714/when-to-use-record-vs-class-vs-struct
 
