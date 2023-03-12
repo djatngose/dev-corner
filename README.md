@@ -43,41 +43,44 @@ We will keep earning and growing a little of knowledge every day. I will collect
       1. Reference types
       2. Value types
    23. Numberic types
-   24. Boolean types and operators
-   25. String and characters
-   26. [Arrays](csharp/4.basic/array.md)
-   27. Expressions and Operators
+   24. [Enum](./csharp/8.NET/11.enum.md)
+   25. [Nested type](./csharp/4.basic/25.nested-type.md)
+   26. [Generic](csharp/4.basic/26.generic.md)
+   27. [Covariant](./csharp/4.basic/27.covariant.md)
    28. Null Operators
    29. Statements
    30. Namespaces
    31. [Operators](csharp/4.basic/operators.md)
    32. [Parameters](csharp/4.basic/parameters.md)
 5.  Advances
-    1.  Delegates
-    2.  Events
-    3.  Lamda expressions
-    4.  Anonymous methods
-    5.  try statements and exceptions
-    6.  Enumerations and Iterators
-    7.  Nullable value types
-    8.  Nullable reference types
-    9.  Extension methods
-    10. Anonymous Types
-    11. Tuples
-    12. Records
-    13. Attributes
-    14. Collections
-    15. Linq queries and operators
-    16. Disposal and Garbage collection
-    17. Concurrency and Async
-    18. Streams and I/O
-    19. Networking
-    20. Assemblies
-    21. Reflection and Metadata
-    22. Advance threading
-    23. parallel programming
-    24. Regular expressions
-    25. Inspect c# code and how it works in github  https://github.com/dotnet/aspnetcore
+    1.  [Delegates](./csharp/delegate.md)
+    2.  [Try catch](./csharp/5.advance/2.try-catch.md)
+    3.  [Iterator](./csharp/5.advance/3.iterator.md)
+    4.  [Nullable value type](./csharp/5.advance/4.nullable-value-type.md)
+    5.  [Pattern](./csharp/5.advance/5.pattern.md)
+    6.  [Anonymous type](./csharp/5.advance/6.anonymous-type.md)
+    7.  [Dependency injection](./csharp/5.advance/7.dependency-injection.md)
+    8.  [Extension method](./csharp/5.advance/8.extension-method.md)
+    9.  [Record](./csharp/5.advance/9.records.md)
+    10. [Tuple](./csharp/5.advance/10.tuples.md)
+    11. [Attribute](./csharp/5.advance/11.attribute.md)
+    12. [Dynamic](./csharp/5.advance/12.dynamic.md)
+    13. [Operator overloading](./csharp/5.advance/13.operator-overloading.md)
+    14. [Unsafe pointer](./csharp/5.advance/14.unsafe-pointer.md)
+    15. [Memory buffer](./csharp/5.advance/16.memory-buffer.md)
+    16. [Preprocessor derecgives](./csharp/5.advance/17.preprocessor-directives.md)
+    17. [Xml documentation](./csharp/5.advance/18.xml-documentation.md)
+    18. Linq queries and operators
+    19. Disposal and Garbage collection
+    20. Concurrency and Async
+    21. Streams and I/O
+    22. Networking
+    23. Assemblies
+    24. Reflection and Metadata
+    25. Advance threading
+    26. parallel programming
+    27. Regular expressions
+    28. Inspect c# code and how it works in github  https://github.com/dotnet/aspnetcore
         1.  Collections
         2.  ConcurrentDictionary
         3.  Http, HttpClientFactory
@@ -85,32 +88,49 @@ We will keep earning and growing a little of knowledge every day. I will collect
         5.  Grpc
         6.  Catching
         7.  SignalR
-6. Security
-7. Concurrency [Class](./csharp/class.md)
-8. Async await programming
-9.  Dependency Injection
-10. Garbage collector 
-11. .NET
+6. Collection
+   1. [Enumeration](./csharp/9.collection/1.enumeration.md)
+   2. [ICollection IList](./csharp/9.collection/2.ICollection-IList.md)
+   3. [Array](./csharp/9.collection/3.array.md)
+   4. [List - ArrayList](./csharp/9.collection/4.list-arrayList.md)
+   5. [Linked list](./csharp/9.collection/5.linked-list.md)
+   6. [Queue stack](./csharp/9.collection/6.queue-stack.md)
+   7. [Bit array](./csharp/9.collection/7.bit-array.md)
+   8. [Hashset Sortset](./csharp/9.collection/8.hashset-sortset.md)
+   9. [Dictionary](./csharp/9.collection/9.dictionary.md)
+   10. [Customize collection proxy](./csharp/9.collection/10.customize-collection-proxy.md)
+   11. [Readonly collection](./csharp/9.collection/11.readonlycollection.md)
+   12. [Immutable collection](./csharp/9.collection/12.immutable-collection.md)
+   13. [Equality comparer](./csharp/9.collection/13.EqualityComparer.md)
+   14. [Comparer](./csharp/9.collection/14.comparer.md)
+   15. [String comparer](./csharp/9.collection/15.string-comparer.md)
+   16. [Structural equatable](./csharp/9.collection/16.StructuralEquatable.md)
+7. Security
+8. Concurrency [Class](./csharp/class.md)
+9.  Async await programming
+10. Dependency Injection
+11. Garbage collector 
+12. .NET
     1.  Scope, Trasient and Singleton
-12. Asynchronous Programming and Multithreading
+13. Asynchronous Programming and Multithreading
     1.  Volatile
     2.  Interlocked
     3.  Lock
     4.  SpinWait
-13. Task.ConfigureAwait(false)
-14. WhenAll vs WaitAll
-15. Thread
-16. [Enumeration comparisons](./csharp/0.csharp-interview/enumeration-comparison.md)
+14. Task.ConfigureAwait(false)
+15. WhenAll vs WaitAll
+16. Thread
+17. [Enumeration comparisons](./csharp/0.csharp-interview/enumeration-comparison.md)
    1.  IEnumerable<T> vs ICollection<T> vs IList<T>
    2.  https://learning.oreilly.com/library/view/c-10-in/9781098121945/ch07.html#ienumerableless_thantgreater_than_and
-17. Thread safe in .NET: Some of the concurrent collection types use lightweight synchronization mechanisms such as SpinLock, SpinWait, SemaphoreSlim, and CountdownEvent,
+18. Thread safe in .NET: Some of the concurrent collection types use lightweight synchronization mechanisms such as SpinLock, SpinWait, SemaphoreSlim, and CountdownEvent,
     1.  Synchronization primitives: Monitor, Mutex, Spinlock, ReaderWriterLock, Semaphore, Autoresetevent,ManualResetEvent, Interlocked, CountDownEvent, Barrier
     2.  https://learn.microsoft.com/en-us/dotnet/standard/collections/thread-safe/
-18. .NET migration
+19. .NET migration
     1.  migrate from .net framework to .net core
     2.  migrate from .net framework to .net 7
     3.  migrate from .net core to .net 7
-19. Interview questions
+20. Interview questions
     1.  https://dotnettutorials.net/course/dot-net-interview-questions/
     2.  When to use record vs class vs struct? https://stackoverflow.com/questions/64816714/when-to-use-record-vs-class-vs-struct
 
