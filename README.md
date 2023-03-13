@@ -137,6 +137,9 @@ We will keep earning and growing a little of knowledge every day. I will collect
 # Python
 I also love Python due to consise and flexible programming language. trying to understand it deeply and willing to work with it as another sencond importantn programming language
 
+# Java
+My college programming language is one of my favourite, I also want to get a chance to deep dive into it :)
+
 # Architecture
 1. Microservice
 2. Migrating to microservice database from relation monolith
