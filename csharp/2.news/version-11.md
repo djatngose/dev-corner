@@ -1,0 +1,14 @@
+# WHAT .NET 7 FEATURES?
+`Performance Improvements:` .NET 7 includes many performance improvements, including faster startup times and better performance for certain types of workloads.
+
+`Source Generators: `Source generators are a new feature in .NET 7 that allow developers to write code that generates additional code at compile-time. This can help reduce boilerplate code and improve performance.
+
+`Async Streams:` Async streams are a new type in .NET 7 that allow developers to asynchronously enumerate collections of data. This can be useful for working with large datasets or streams of data.
+
+`HTTP3 Support: `.NET 7 includes support for the HTTP3 protocol, which is the latest version of the HTTP protocol and provides faster and more secure communication between clients and servers.
+
+`Minimal APIs:` .NET 7 introduces a new way to create web APIs with minimal overhead and configuration. This can help developers create APIs more quickly and with less code.
+
+`Native Dependencies:` .NET 7 introduces support for native dependencies, which allows developers to include native libraries with their .NET applications.
+
+`Improved Container Support: `.NET 7 includes several improvements to container support, including better integration with Kubernetes and support for containerized Windows applications.
