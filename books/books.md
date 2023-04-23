@@ -16,3 +16,6 @@
 3. AWS Certified Solutions Architect Study Guide: Associate SAA-C02 Exam" by Ben Piper, 
 4. "Azure for Architects" by Ritesh Modi. This book covers advanced Azure concepts and architecture patterns such as hybrid cloud, serverless computing, and DevOps on Azure.
 5. "Architecting for Scale: High Availability for Your Growing Applications" by Lee Atchison.
+
+# C#
+1. [Threading in C#](https://www.albahari.com/threading/) by Joseph Albahari

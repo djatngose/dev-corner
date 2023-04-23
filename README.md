@@ -88,7 +88,23 @@ We will keep earning and growing a little of knowledge every day. I will collect
         5.  Grpc
         6.  Catching
         7.  SignalR
-6. Collection
+6. .NET
+   1. [Net standard](./csharp/6.NET/1.NET-standard.md)
+   2. [CLR BCL](./csharp/6.NET/2.clr-bcl.md)
+   3. [Application layer](./csharp/6.NET/3.application-layer.md)
+   4. [string-text-handling](./csharp/6.NET/4.string-text-handling.md)
+   5. [Date time](./csharp/6.NET/5.date-time.md)
+   6. [Timezone](./csharp/6.NET/6.time-zone.md)
+   7. [formating-parsing](./csharp/6.NET/7.formating-parsing.md)
+   8. [globalization](./csharp/6.NET/8.globalization.md)
+   9. [number](./csharp/6.NET/9.number.md)
+   10. [bit-operations](./csharp/6.NET/10.bit-operations.md)
+   11. [enum](./csharp/6.NET/11.enum.md)
+   12. [Guid-struct](./csharp/6.NET/12.guid-struct.md)
+   13. [equality-comparison](./csharp/6.NET/13.equality-comparison.md)
+   14. [order-comparison](./csharp/6.NET/14.order-comparison.md)
+   15. [utility-class](./csharp/6.NET/15.utility-class.md)
+7. Collection
    1. [Enumeration](./csharp/9.collection/1.enumeration.md)
    2. [ICollection IList](./csharp/9.collection/2.ICollection-IList.md)
    3. [Array](./csharp/9.collection/3.array.md)
@@ -105,32 +121,65 @@ We will keep earning and growing a little of knowledge every day. I will collect
    14. [Comparer](./csharp/9.collection/14.comparer.md)
    15. [String comparer](./csharp/9.collection/15.string-comparer.md)
    16. [Structural equatable](./csharp/9.collection/16.StructuralEquatable.md)
-7. Security
-8. Concurrency [Class](./csharp/class.md)
-9.  Async await programming
-10. Dependency Injection
-11. Garbage collector 
-12. .NET
-    1.  Scope, Trasient and Singleton
-13. Asynchronous Programming and Multithreading
+   17. [Enumeration comparisons](./csharp/0.csharp-interview/enumeration-comparison.md)
+       1.  IEnumerable<T> vs ICollection<T> vs IList<T>
+       2.  https://learning.oreilly.com/library/view/c-10-in/9781098121945/ch07.html#ienumerableless_thantgreater_than_and
+8.  Linq
+    1.  [Linq query](./csharp/8.linq/1.linq-query.md)
+    2.  [linq-query-expression](./csharp/8.linq/2.linq-query-expression.md)
+    3.  [linq-deferred-execution](./csharp/8.linq/3.linq-deferred-execution.md)
+    4.  [linq-subqueries](./csharp/8.linq/4.linq-subqueries.md)
+    5.  [linq-composition-strategy](./csharp/8.linq/5.linq-composition-strategy.md)
+    6.  [linq-projection-strategy](./csharp/8.linq/6.linq-projection-strategy.md)
+    7.  [linq-filtering](./csharp/8.linq/7.linq-filtering.md)
+    8.  [linq-interpreted-query.](./csharp/8.linq/8.linq-interpreted-query.md)
+    9.  [linq-projecting](./csharp/8.linq/9.linq-projecting.md)
+    10. [linq-select-many](./csharp/8.linq/10.linq-select-many.md)
+    11. [linq-join-group-join](./csharp/8.linq/11.linq-join-group-join.md)
+    12. [linq-zip](./csharp/8.linq/12.linq-zip.md)
+    13. [linq-ordering](./csharp/8.linq/13.linq-ordering.md)
+    14. [linq-grouping](./csharp/8.linq/14.linq-grouping.md)
+    15. [linq-chunk](./csharp/8.linq/15.linq-chunk.md)
+    16. [linq-concat-union-unionby](./csharp/8.linq/16.linq-concat-union-unionby.md)
+    17. [linq-intersect-except](./csharp/8.linq/17.linq-intersect-except.md)
+    18. [linq-oftype-cast-conversion](./csharp/8.linq/18.linq-oftype-cast-conversion.md)
+    19. [linq-toarray-tolist-todictionary-tolookup-tohashset](./csharp/8.linq/19.linq-toarray-tolist-todictionary-tolookup-tohashset.md)
+    20. [element-operators](./csharp/8.linq/20.element-operators.md)
+    21. [linq-first-single-last](./csharp/8.linq/21.linq-first-single-last.md)
+    22. [linq-elementat](./csharp/8.linq/22.linq-elementat.md)
+    23. [linq-defaultIfEmpty](./csharp/8.linq/23.linq-defaultIfEmpty.md)
+    24. [linq-aggregratio](./csharp/8.linq/24.linq-aggregration.md)
+    25. []linq-contain-any](./csharp/8.linq/25.linq-contain-any.md)
+    26. [linq-all-sequenceequal](./csharp/8.linq/26.linq-all-sequenceequal.md)
+    27. [linq-empty-range](./csharp/8.linq/27.linq-empty-range.md)
+9.  XML
+10. JSON
+11. disposal-garbage-collection
+12. ASYNC
+13. Diposal and GC
+14. Migration
+    1.  migrate from .net framework to .net core
+    2.  migrate from .net framework to .net 7
+    3.  migrate from .net core to .net 7
+15. ENtity framework
+16. Diagnose
+17. Concurrency, Asynchronous Programming and Multithreading
     1.  Volatile
     2.  Interlocked
     3.  Lock
     4.  SpinWait
-14. Task.ConfigureAwait(false)
-15. WhenAll vs WaitAll
-16. Thread
-17. [Enumeration comparisons](./csharp/0.csharp-interview/enumeration-comparison.md)
-   1.  IEnumerable<T> vs ICollection<T> vs IList<T>
-   2.  https://learning.oreilly.com/library/view/c-10-in/9781098121945/ch07.html#ienumerableless_thantgreater_than_and
-18. Thread safe in .NET: Some of the concurrent collection types use lightweight synchronization mechanisms such as SpinLock, SpinWait, SemaphoreSlim, and CountdownEvent,
-    1.  Synchronization primitives: Monitor, Mutex, Spinlock, ReaderWriterLock, Semaphore, Autoresetevent,ManualResetEvent, Interlocked, CountDownEvent, Barrier
-    2.  https://learn.microsoft.com/en-us/dotnet/standard/collections/thread-safe/
-19. .NET migration
-    1.  migrate from .net framework to .net core
-    2.  migrate from .net framework to .net 7
-    3.  migrate from .net core to .net 7
-20. Interview questions
+18. Stream
+19. Networking
+20. Assemblies
+21. Reflection metadata
+22. Dynamic
+23. Crypto
+24. Memory
+25. Native com interoperability
+26. Trouble shooting
+27. Libraries
+28. .NET migration
+29. Interview questions
     1.  https://dotnettutorials.net/course/dot-net-interview-questions/
     2.  When to use record vs class vs struct? https://stackoverflow.com/questions/64816714/when-to-use-record-vs-class-vs-struct
 
