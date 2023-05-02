@@ -19,3 +19,13 @@
 
 # C#
 1. [Threading in C#](https://www.albahari.com/threading/) by Joseph Albahari
+2. C# 10 in Nutshell by Oreilly.com
+3. [Microservices in .NET](https://www.manning.com/books/microservices-in-net-second-edition?query=.net)
+4. [Dependency Injection in .NET](https://www.manning.com/books/dependency-injection-in-dot-net?query=.net)
+
+# Python
+- PyTorch and training deep neural networks.
+- Architecture  lower latency and higher throughput.
+
+# Network
+- Network architectures
