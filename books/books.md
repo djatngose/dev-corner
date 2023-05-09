@@ -1,6 +1,6 @@
 # Learning path
 1. "Building Microservices" by Sam Newman
-2. "Clean Architecture" by Robert C. Martin.
+2. `"Clean Architecture" by Robert C. Martin`.
 3. "Enterprise Architecture as Strategy" by Jeanne W. Ross, Peter Weill, and David C. Robertson.
 4. "The DevOps Handbook" by Gene Kim, Jez Humble, Patrick Debois, and John Willis.
 5. `JWT Handbook`
@@ -26,6 +26,10 @@
 # Python
 - PyTorch and training deep neural networks.
 - Architecture  lower latency and higher throughput.
+
+# Micorsercices
+- Building Microservices Applications on Microsoft Azure: Designing, Developing, Deploying, and Monitoring 
+  - https://learning.oreilly.com/library/view/building-microservices-applications/9781484248287/
 
 # Network
 - Network architectures

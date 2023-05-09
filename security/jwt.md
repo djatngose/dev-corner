@@ -1,3 +1,52 @@
+# Signed Jwt
+Signed JWTs are constructed from three different parts: the `header, the payload, and the signature.`
+
+`These three parts are encoded separately`.
+
+The signature is used to ensure that the token has not been tampered with and that it has been issued by a trusted party.
+
+As such, it is possible to `remove the signature and then change the header to claim the JWT is unsigned`. Careless use of certain JWT validation libraries can result in unsigned tokens being taken as valid tokens, which may allow an attacker to modify the payload at his or her discretion. This is easily solved by making sure that the application that performs the validation does not consider unsigned JWTs valid.
+
+```js
+// header
+{
+  "alg": "RS256",
+  "typ": "JWT"
+}
+
+//payload
+{
+  "jti": "gabnz5y54tgwjdahjqkf5rxfir",
+  "sid": "f2c1e70dbac04cdbbb56a33b99bcd45c",
+  "sub": "f2c1e70dbac04cdbbb56a33b99bcd45c",
+  "name": "Dat Ngo",
+  "email": "therocknpd+dev1@gmail.com",
+  "email-verified": "1",
+  "nbf": 1681896516,
+  "exp": 1681900116,
+  "iat": 1681896516,
+  "iss": "urn:pie:angstroem",
+  "aud": "urn:pie"
+}
+// verify signature
+RSASHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  
+Public Key in SPKI, PKCS #1, X.509 Certificate, or JWK string format.
+,
+  
+Private Key in PKCS #8, PKCS #1, or JWK string format. The key never leaves your browser.
+
+)
+```
+[''](../security/jwt-structure.png)
+# sub
+The subject claim usually identifies one of the parties to the other `(think of user IDs or emails)`
+
+It is not a requirement that this claim be unique.
+
+
 # what JwtSecurityTokenHandler.ValidateToken do?
 The `ValidateToken` method takes in a string representation of a JWT, a TokenValidationParameters object that contains the parameters used to validate the token, and an out parameter of type SecurityToken. The method then validates the JWT by checking its signature, expiration time, and other relevant properties against the provided parameters. If the token is valid, the method returns a ClaimsPrincipal object that represents the authenticated entity associated with the token.
 
