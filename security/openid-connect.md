@@ -1,0 +1,9 @@
+# what difference oauth and openid connect? when to use it?
+
+OAuth and OpenID Connect (OIDC) are related protocols used for authentication and authorization in modern web applications. While OAuth primarily focuses on authorization, OpenID Connect extends OAuth to include authentication capabilities.
+
+OAuth is a protocol that allows third-party applications to access resources on behalf of a user, without requiring the user to disclose their credentials to the third-party application. It enables secure and delegated access to protected resources by obtaining an access token from an authorization server. OAuth is commonly used in scenarios where an application needs to access resources on external systems, such as accessing user data on social media platforms or making API requests on behalf of the user.
+
+OpenID Connect, on the other hand, builds upon OAuth and adds an identity layer on top of it. It provides a standardized way for applications to authenticate users and obtain their identity information. OpenID Connect allows applications to verify the identity of users and receive basic profile information about them. It provides an ID token, which contains user claims and serves as a proof of authentication. OpenID Connect is commonly used in scenarios where applications require user authentication and need access to user identity information.
+
+In summary, OAuth is primarily focused on authorization and allowing third-party applications to access resources, while OpenID Connect extends OAuth to include authentication capabilities and provides identity information about users. The choice between OAuth and OpenID Connect depends on the specific requirements of your application. If you only need authorization for accessing resources, OAuth may be sufficient. However, if you also require user authentication and identity information, OpenID Connect is a more suitable choice.
