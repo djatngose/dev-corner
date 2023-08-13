@@ -1,0 +1,12 @@
+# I have a backgound service that automatically get message from azure servive bus in an interval . Do you know why I restarted service, some messages can not be processed and they are not in queue anymore?
+There could be several reasons why messages from Azure Service Bus are not processed after restarting your background service. Here are a few potential causes:
+
+`Message Lock Duration`: When a message is received from Azure Service Bus, it is locked for a specified duration to ensure that only one consumer processes it at a time. If your background service fails to process a message within the lock duration, the message will become available for other consumers to pick up. Ensure that the lock duration is set appropriately based on the processing time required by your service.
+
+`Message Abandonment`: If an exception occurs during message processing, and the service abandons the message instead of completing or dead-lettering it, the message will become available for processing again after the lock duration expires. Make sure that your service handles exceptions properly and either completes or dead-letters messages to avoid message duplication.
+
+`Message Time-to-Live (TTL)`: Azure Service Bus has a configurable time-to-live (TTL) property for messages. If the TTL for a message expires before your background service restarts and picks up the message, it will be automatically removed from the queue or subscription. Check the TTL settings for your messages and ensure they allow enough time for your service to process them.
+
+`Subscription Rules or Filters`: If you are using subscriptions with rules or filters on your Azure Service Bus topics, it's possible that the messages that are not being processed after a restart do not match the rules or filters defined for the subscription. Double-check your subscription settings and ensure they align with the expected message properties or content.
+
+`Service Bus Client Configuration`: Review the configuration settings of your Service Bus client in your background service. Ensure that it is configured correctly with the appropriate connection string, queue or subscription name, and other required parameters. Make sure there are no issues with the client initialization or message receiving code.
