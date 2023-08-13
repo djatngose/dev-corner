@@ -212,3 +212,12 @@ The await foreach statement consumes an asynchronous stream:
 await foreach (var number in RangeAsync (0, 10, 100))
   Console.WriteLine (number);
 ```
+
+# short circuiting
+https://www.youtube.com/watch?v=rXdwX2X4-gw&ab_channel=NickChapsas
+
+# The New “Interceptors”
+https://www.youtube.com/watch?v=91xir2oUQPg&ab_channel=NickChapsas
+
+# Why You Might Not Need Interfaces in C# 12
+https://www.youtube.com/watch?v=ptJ5vGhvQmI&ab_channel=NickChapsas
