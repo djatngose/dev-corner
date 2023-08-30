@@ -8,8 +8,11 @@
 7. Clean code
 8. "Code Complete" by Steve McConnell.
 9. "The Phoenix Project" by Gene Kim, Kevin Behr, and George Spafford.
-
-
+- "Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin.
+- "Designing Data-Intensive Applications" by Martin Kleppmann.
+- "Building Microservices" by Sam Newman.
+- "Scalability Patterns: Best Practices for Designing High-Volume Websites" by Martin L. Abbott and Michael T. Fisher.
+- "High-Performance MySQL: Optimization, Backups, and Replication" by Baron Schwartz, Peter Zaitsev, and Vadim Tkachenko
 # Azure
 1. "Cloud Computing: Concepts, Technology & Architecture" by Thomas Erl, Ricardo Puttini, and Zaigham Mahmood
 2. "Microsoft Azure Architect Technologies Study Guide: Exam AZ-303" by Sander van Vugt

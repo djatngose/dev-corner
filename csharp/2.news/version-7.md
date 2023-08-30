@@ -281,3 +281,6 @@ string Capitalize (string value) =>
 
 # REF
   https://positivethinking.tech/insights/net-6-vs-net-7-deep-dive-into-the-upgrade/
+
+# Insance performance boots of LINQ
+https://www.youtube.com/watch?v=zCKwlgtVLnQ&ab_channel=NickChapsas
